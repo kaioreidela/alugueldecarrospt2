@@ -24,7 +24,7 @@ public class cliente extends pessoa{
 	public void mostrarDados(){
         System.out.println("NOME: "+ getNome() + " CPF: " + getCpf() + " LOGIN: " + getLoginCli() + " SENHA: " + getsenhaCli());
     }
-    
+    //retirar pois é funcao de negocio
     public veiculo buscarVeiculoalugado(String placa) {
         for (veiculo veiculo : veiculos) {
             if (veiculo.getplaca().equals(placa)) {
@@ -33,13 +33,13 @@ public class cliente extends pessoa{
         }
         return null;
     }
-    
+    //retirar pois é funcao de negocio
     public void adicionarVeiculonaListadoCliente(veiculo veiculo) {
         if (veiculo != null) {
             veiculos.add(veiculo);
         }
     }
-    
+    //retirar pois é funcao de negocio
     public void removerVeiculonalistadoCliente(veiculo veiculo) {
     	if(veiculo != null) {
     		veiculos.remove(veiculo);
