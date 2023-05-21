@@ -7,6 +7,7 @@ public class negociogerente {
     public void listar(){
         for (int i = 0; i <repositorioclientes.clientes.size(); i++) {
             repositorioclientes.clientes.get(i).mostrarDados();
+            
         }  
     }
     // a funcaão abaixo como era antes. as condicoes de else devem ser tratadas como exeçoes

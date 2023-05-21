@@ -9,7 +9,7 @@ import repositorio.repositorioclientes;
 public class negociocliente {
     repositoriocarro repositoriocarro = new repositoriocarro();
     repositorioclientes repositorioclientes = new repositorioclientes();
-
+    
 
     // funcoes de veiculo do cliente
     public int listardisponibilidade(){
@@ -43,9 +43,10 @@ public class negociocliente {
     
         if (veiculo != null && cliente != null) {
             veiculo.setDisponivel(false);
-            cliente.adicionarVeiculonaListadoCliente(veiculo);
+            adicionarVeiculonaListadoCliente(veiculo);
             repositoriocarro.veiculos.remove(veiculo);
-            System.out.println("\n\033[0;32mVeículo com placa:" + veiculo.getplaca() + "," + " alugado para o cliente " + cliente.getNome()+ "\033[0m");      
+            //funcao deve ser tratado no menu
+            //System.out.println("\n\033[0;32mVeículo com placa:" + veiculo.getplaca() + "," + " alugado para o cliente " + cliente.getNome()+ "\033[0m");      
         }
     }
         // o else deve ser tratado como erro
@@ -57,13 +58,14 @@ public class negociocliente {
     
   
   public void devolverVeiculo(String placa, cliente cliente) {
-    veiculo veiculo = cliente.buscarVeiculoalugado(placa);
+    veiculo veiculo = buscarVeiculoalugado(placa);
 
     if (veiculo != null && !veiculo.isDisponivel()) {
         veiculo.setDisponivel(true);
-        cliente.removerVeiculonalistadoCliente(veiculo);
+        removerVeiculonalistadoCliente(veiculo);
         repositoriocarro.veiculos.add(veiculo);
-        System.out.println("\n\033[0;33Veículo " + veiculo.getModelo() + " devolvido.\033[0m");
+         //funcao deve ser tratado no menu
+        //System.out.println("\n\033[0;33Veículo " + veiculo.getModelo() + " devolvido.\033[0m");
     }
     }
     // o else deve ser tratado como exception
@@ -79,6 +81,27 @@ public class negociocliente {
             // retirar pq println fica fora 
             // System.out.println("\nCARROS ALUGADOS POR VOCÊ:");
         }
+
+        public veiculo buscarVeiculoalugado(String placa) {
+            for (veiculo veiculo : repositoriocarro.veiculos) {
+                if (veiculo.getplaca().equals(placa)) {
+                    return veiculo;
+                }
+            }
+            return null;
+        } 
+       
+        public void adicionarVeiculonaListadoCliente(veiculo veiculo) {
+            if (veiculo != null) {
+                repositoriocarro.veiculos.add(veiculo);
+            }
+        }
+    
+        public void removerVeiculonalistadoCliente(veiculo veiculo) {
+            if(veiculo != null) {
+                repositoriocarro.veiculos.remove(veiculo);
+            }
+        }    
     // funcoes de veiculo do cliente
     
     public cliente login(String login, int senha) {
@@ -89,6 +112,8 @@ public class negociocliente {
     	}
     	return null;
     }
+
+  
 }
 
     
