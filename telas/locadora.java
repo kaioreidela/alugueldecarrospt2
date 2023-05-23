@@ -9,10 +9,19 @@ import dados.veiculo;
 import dados.negociocliente;
 import dados.negociogerente;
 
-
+// implementar metodos na locadora
+// "Digite 1 para: Cadastrar Veiculo \n"
+//+ "Digite 2 para: Remover Veiculo \n"
+//+ "Digite 3 para: Cadastrar Cliente \n"
+//+ "Digite 4 para: Remover Cliente \n" 
+//+ "Digite 5 para: Listar Clientes \n"
+//+ "Digite 6 para: Mudar seu login ou senha\n"
 
 public class locadora {
    repositoriocarro repositoriocarro = new repositoriocarro();
+   repositorioclientes repositorioclientes = new repositorioclientes();
+   negociocliente negociocliente = new negociocliente();
+   negociogerente negociogerente = new negociogerente();
 
    public locadora(){
       negociocliente negociocliente = new negociocliente();
@@ -22,23 +31,15 @@ public class locadora {
 
    }
 
-   public void cadastrarPessoa( String nome ,int cpf){
+   public pessoa cadastrarPessoa( String nome ,int cpf){
       pessoa pessoa = new pessoa(nome,cpf);
+      return pessoa;
    }
  
   
-   public void cadastrarGerente( String nome ,int cpf ,String loginGer , int senhaGer){
+   public gerente cadastrarGerente( String nome ,int cpf ,String loginGer , int senhaGer){
       gerente gerente = new gerente(nome, cpf, loginGer, senhaGer);
-   }
-
-   public void cadastrarCliente(String nome3, int cpf3, String loginCli, int senhaCli){
-      cliente cliente = new cliente(nome3, cpf3,loginCli, senhaCli);
-   }
-
-   public void cadastrarVeiculo( String modelo, String marca,  String codigo){
-      veiculo veiculo = new veiculo(modelo,marca,codigo);
-      repositoriocarro.veiculos.add(veiculo);
-      
+      return gerente;
    }
 
 }
