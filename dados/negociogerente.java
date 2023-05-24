@@ -2,11 +2,16 @@ package dados;
 import repositorio.repositorioclientes;
 
 public class negociogerente {
-    repositorioclientes repositorioclientes = new repositorioclientes();   
+    private repositorioclientes repositorioclientes2;
+ 
+    public negociogerente(repositorioclientes repositorioclientes2){
+        this.repositorioclientes2 = repositorioclientes2;
+    }
+
 
     public void listar(){
-        for (int i = 0; i <repositorioclientes.clientes.size(); i++) {
-            repositorioclientes.clientes.get(i).mostrarDados();
+        for (int i = 0; i <repositorioclientes2.clientes.size(); i++) {
+            repositorioclientes2.clientes.get(i).mostrarDados();
             
         }  
     }

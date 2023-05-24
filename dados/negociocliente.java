@@ -7,9 +7,14 @@ import repositorio.repositorioclientes;
 
 
 public class negociocliente {
-    repositoriocarro repositoriocarro = new repositoriocarro();
-    repositorioclientes repositorioclientes = new repositorioclientes();
-    
+    private repositoriocarro repositoriocarro;
+    private repositorioclientes repositorioclientes;
+   
+
+    public negociocliente(repositorioclientes repositorioclientes, repositoriocarro repositoriocarro){
+        this.repositorioclientes = repositorioclientes;
+        this.repositoriocarro = repositoriocarro;
+    }
 
     // funcoes de veiculo do cliente
     public int listardisponibilidade(){
