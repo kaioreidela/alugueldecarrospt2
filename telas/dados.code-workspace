@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../dados"
+		},
+		{
+			"path": "../menu"
+		},
+		{
+			"path": "../repositorio"
+		},
+		{
+			"path": "."
+		}
+	]
+}

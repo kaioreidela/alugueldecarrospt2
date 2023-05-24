@@ -12,24 +12,24 @@ import dados.negociogerente;
 //+ "Digite 2 para: Devolver veiculo\n"
 // "Digite 3 para: Ver veiculos disponiveis\n"
 public class locadoracliente {
+    private negociocliente negociocliente;
+    private negociogerente negociogerente;
     repositoriocarro repositoriocarro = new repositoriocarro();
     repositorioclientes repositorioclientes = new repositorioclientes();
-    negociocliente negociocliente = new negociocliente();
-    negociogerente negociogerente = new negociogerente();
+   
    
     public locadoracliente(){
-       negociocliente negociocliente = new negociocliente();
-       negociogerente negociogerente = new negociogerente();
-       repositoriocarro repositoriocarro = new repositoriocarro();
-       repositorioclientes repositorioclientes = new repositorioclientes();
+       this.negociocliente = new negociocliente(repositorioclientes, repositoriocarro);
+    
     }
-    public void loginCliente(String login2,int senha2 ){
-        cliente c = negociocliente.login(login2, senha2); 
+    
+    public cliente loginCliente(String login2,int senha2 ){
+        cliente cliente = negociocliente.login(login2, senha2); 
+        return cliente;
     }
     
 
     public void alugarVeiculo(String placa, cliente cliente){
-       
         negociocliente.alugarVeiculo(placa, cliente);
         negociocliente.verCarrosAlugados(cliente);
 
@@ -46,6 +46,15 @@ public class locadoracliente {
         negociocliente.listardisponibilidade();
 
     }
+
+    public void verCarrosAlugados(cliente cliente){
+        negociocliente.verCarrosAlugados(cliente);
+    }
+    
+    public int listardisponibilidade(){
+        return negociocliente.listardisponibilidade();
+    }
+
 
 
     

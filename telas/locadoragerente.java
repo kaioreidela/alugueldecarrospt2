@@ -17,19 +17,18 @@ import dados.negociogerente;
 //+ "Digite 6 para: Mudar seu login ou senha\n"
 
 public class locadoragerente {
+   private negociocliente negociocliente;
+   private negociogerente negociogerente;
    repositoriocarro repositoriocarro = new repositoriocarro();
    repositorioclientes repositorioclientes = new repositorioclientes();
-   negociocliente negociocliente = new negociocliente();
-   negociogerente negociogerente = new negociogerente();
-
+  
+  
    public locadoragerente(){
-      
-      negociocliente negociocliente = new negociocliente();
-      negociogerente negociogerente = new negociogerente();
-      repositoriocarro repositoriocarro = new repositoriocarro();
-      repositorioclientes repositorioclientes = new repositorioclientes();
-
+      this.negociogerente = new negociogerente(repositorioclientes);
+   
    }
+   
+
 
    public void cadastrarCliente(String nome3, int cpf3, String loginCli, int senhaCli){
       cliente cliente = new cliente(nome3, cpf3,loginCli, senhaCli);
