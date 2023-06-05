@@ -73,7 +73,9 @@ public class menufachada {
         							String marca = scanner.nextLine();
         							System.out.println("Digite a placa:");
         							String codigo = scanner.nextLine();
-        							locadoragerente.cadastrarVeiculo(modelo, marca, codigo);
+        							veiculo veiculo = locadoragerente.cadastrarVeiculo(modelo, marca, codigo);
+									System.out.println("\n\033[0;32mVeiculo Cadastrado!\033[0m");
+									
         							break;
 
         						case 2:
@@ -81,6 +83,7 @@ public class menufachada {
         							System.out.println("Digite a placa do veiculo:");
         							String cod = scanner.nextLine();    							
         							locadoragerente.removerVeiculo(cod);
+									System.out.println("\n\033[0;32mVeiculo Removido!\033[0m");
         							break;
 
         						case 3:
@@ -93,7 +96,8 @@ public class menufachada {
         							String loginCli = scanner.nextLine();
         							System.out.println("Digite a senha(pin):");
         							int senhaCli = Integer.valueOf(scanner.nextLine());
-                                    locadoragerente.cadastrarCliente(nome3, cpf3, loginCli, senhaCli);
+                                    cliente cliente = locadoragerente.cadastrarCliente(nome3, cpf3, loginCli, senhaCli);
+									System.out.println("\n\033[0;32mCliente cadastrado com sucesso!\033[0m");
         							break;
 
         						case 4:
@@ -101,6 +105,7 @@ public class menufachada {
         							System.out.println("Digite o CPF do cliente:");
         							int delCpf = Integer.valueOf(scanner.nextLine());
         							locadoragerente.removerCliente(delCpf);
+									System.out.println("\n\033[0;32mCliente Removido!\033[0m");
         							break;
         						
         						case 5:
@@ -165,12 +170,14 @@ public class menufachada {
         					switch(opcao2){            
             					case 1:
             						System.out.println("\n\033[0;33mVocê escolheu Alugar veiculo\033[0m");
+									System.out.println("VEICULOS DISPONIVEIS:");
             						if(locadoracliente.listardisponibilidade() == 1) {
             							break;
             						}
             						System.out.println("\nDigite a placa:");
             						String placa = scanner.nextLine();
             						locadoracliente.alugarVeiculo(placa, cliente);
+									System.out.println("\n\033[0;32mVeículo alugado para o cliente " + cliente.getNome()+ "\033[0m");      
             						break;
             					
             					case 2: 
@@ -178,10 +185,12 @@ public class menufachada {
             						System.out.println("\nDigite a placa:");
             						String placa2 = scanner.nextLine();
 									locadoracliente.devolverVeiculo(placa2, cliente);
+									System.out.println("\n\033[0;33Veículo devolvido.\033[0m");
             						break;
             					
             					case 3:
             						System.out.println("\n\033[0;33mVocê escolheu ver veiculos disponiveis\033[0m");
+									System.out.println("VEICULOS DISPONIVEIS:");
 									locadoracliente.listardisponibilidade();
             						break;
             					

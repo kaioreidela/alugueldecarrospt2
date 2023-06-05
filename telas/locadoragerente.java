@@ -30,10 +30,11 @@ public class locadoragerente {
    
 
 
-   public void cadastrarCliente(String nome3, int cpf3, String loginCli, int senhaCli){
+   public cliente cadastrarCliente(String nome3, int cpf3, String loginCli, int senhaCli){
       cliente cliente = new cliente(nome3, cpf3,loginCli, senhaCli);
       repositorioclientes.clientes.add(cliente);
       repositorioclientes.listar();
+      return cliente;
    }
 
    public void removerCliente(int delCpf){
@@ -41,10 +42,11 @@ public class locadoragerente {
       repositorioclientes.listar();
    }
 
-   public void cadastrarVeiculo( String modelo, String marca,  String codigo){
+   public veiculo cadastrarVeiculo( String modelo, String marca,  String codigo){
       veiculo veiculo = new veiculo(modelo,marca,codigo);
       repositoriocarro.veiculos.add(veiculo);
       repositoriocarro.listar();
+      return veiculo;
       
    }   
    public void removerVeiculo(String cod){    							
