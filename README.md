@@ -3,4 +3,4 @@ Projeto da cadeira de Programação Orientada a Objetos (POO), que consiste em m
 
 O projeto está na branch da MAIN, segue o link abaixo do documento:
 
-https://docs.google.com/document/d/1LdTPVNMsp86Dqlkmx0s3qLOWAj5d43RAtlrnFXlOIGw/edit?usp=sharing
+https://docs.google.com/document/d/1TPPXJCLElJd4OigjGmvP_73I-FdAbIYKUdS1d7AbVyQ/edit#heading=h.jha52b1h01gk
